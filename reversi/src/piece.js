@@ -21,8 +21,10 @@ Piece.prototype.oppColor = function () {
  */
 Piece.prototype.flip = function () {
     if (this.color === 'white') {
-        
-    }  
+        this.color = 'black';
+    }  else {
+        this.color = 'white';
+    }
 };
 
 
@@ -31,6 +33,11 @@ Piece.prototype.flip = function () {
  * based on its color.
  */
 Piece.prototype.toString = function () {
+    if (this.color === 'white') {
+        return 'W';
+    } else {
+        return 'B';
+    }
 };
 
 // DON'T TOUCH THIS CODE
