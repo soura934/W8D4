@@ -38,6 +38,11 @@ Board.DIRS = [
  * Checks if a given position is on the Board.
  */
 Board.prototype.isValidPos = function (pos) {
+  // debugger
+  if ((pos[0] < 8 && pos[1] < 8) && (pos[0] >= 0 && pos[1] >= 0)) {
+    return true;
+  }
+  return false;
 };
 
 /**
@@ -45,7 +50,13 @@ Board.prototype.isValidPos = function (pos) {
  * throwing an Error if the position is invalid.
  */
 Board.prototype.getPiece = function (pos) {
+  if (this.isValidPos(pos)){
+    return Piece[pos];
+  } else {
+    throw Error;
+  }
 };
+// return pos unless it isn't valid
 
 /**
  * Checks if the piece at a given position
