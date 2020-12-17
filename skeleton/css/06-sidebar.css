@@ -1,18 +1,26 @@
 /* PHASE 0: Sidebar */
 
 .profile-picture {
-    display: block;
     margin-top: -120px;
     position: relative;
-    width: 100%;
-    height: auto;
     border: 1px solid black;
 }
 
-.profile-info {
+.profile-info h3{
+    font-size: 25px;
+}
 
+.profile-nav li {
+    border-top: 1px solid gray;
+    font-weight: 700;
+    padding: 6px 0px 6px 0px ;
+}
+
+.profile-nav li:last-child {
+    border-bottom: 1px solid gray;
 }
 
 .profile-nav {
-
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
