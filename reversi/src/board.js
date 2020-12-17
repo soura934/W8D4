@@ -50,10 +50,12 @@ Board.prototype.isValidPos = function (pos) {
  * throwing an Error if the position is invalid.
  */
 Board.prototype.getPiece = function (pos) {
+  let row = pos[0];
+  let col = pos[1];
   if (this.isValidPos(pos)){
-    return Piece[pos];
+    return this.grid[row][col];
   } else {
-    throw Error;
+    throw Error('Not valid pos!');
   }
 };
 // return pos unless it isn't valid
@@ -63,6 +65,16 @@ Board.prototype.getPiece = function (pos) {
  * matches a given color.
  */
 Board.prototype.isMine = function (pos, color) {
+  let row = pos[0];
+  let col = pos[1];
+  debugger
+  if (this.grid[row][col] !== undefined && this.grid[row][col].color === color) {
+    return true;
+  } else if (this.grid[row][col] !== undefined && this.grid[row][col].color !== color){
+    return false;
+  } else {
+    return false;
+  }
 };
 
 /**
